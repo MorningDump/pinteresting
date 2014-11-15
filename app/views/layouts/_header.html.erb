@@ -1,4 +1,5 @@
 <nav class="navbar navbar-default" role="navigation">
+	
 	  <div class="container"> <!-- beginning of container div -->
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
@@ -19,9 +20,14 @@
 	        <li><%= link_to "Gallery", root_path %></li>
 	        <li><%= link_to "About", about_path %></li>
 	    </ul>
+	    <% if user_signed_in? %>
 	    <ul class="nav navbar-nav navbar-right">
-	        <li><%= link_to "Log In", "#", class: "btn-primary btn-sm" %></li>
+	   	 <li><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn-primary btn-sm" %></li>
+	    <% else %>
+	    <ul class="nav navbar-nav navbar-right">
+	        <li><%= link_to "Log In", new_user_session_path, class: "btn-primary btn-sm" %></li>
 	      </ul>
+	      <% end %>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</div> <!--end of container div-->
