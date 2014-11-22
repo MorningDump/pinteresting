@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 gem 'rails'
 gem 'sass-rails'
 gem 'uglifier'
@@ -10,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'bootstrap-sass'
 gem 'devise'
+
 
 group :development, :test do
 		gem 'sqlite3'

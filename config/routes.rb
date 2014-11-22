@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  resources :pins
+
   devise_for :rfrs
-  devise_for :users
+devise_for :users do
+  get '/users/sign_out' => 'devise/sessions#destroy'
+end
   root "pages#home"
   get "about" => "pages#about" #creates about path
   
